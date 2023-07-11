@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav bar</title>
+</head>
+
+<style>
+    body {
+        width: 85%;
+        margin: auto;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        background: grey;
+    }
+
+    header nav,
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    header nav ul li {
+        list-style: none;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        margin-left: 50px;
+        color: white;
+        font-size: 20px;
+    }
+
+    .active {
+        color: black;
+    }
+</style>
+
+<body>
+    <header>
+        <div>
+            <h1>Logo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="prestation.html" class="nav-link">Prestation</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+
+<script>
+    const nav_link = document.getElementsByClassName('nav-link');
+
+
+    for (let index = 0; index < nav_link.length; index++) {
+        const element = nav_link[index];
+        element.addEventListener('click', () => {
+            console.log('element: ', element);
+            if (!element.classList.contains('active')) {
+                console.log('active: ', active);
+
+                if (active) {
+                    active.classList.remove('active');
+                }
+
+                element.classList.add('active');
+                console.log('element: ', element);
+            } else {
+                console.log('T\'as deja la classe \'active\' gros');
+            }
+        });
+    }
+</script>
+
+</html>

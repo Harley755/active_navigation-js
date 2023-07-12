@@ -93,24 +93,24 @@
     <script>
         // NAVIGATION LINK
         const nav_link = document.getElementsByClassName('nav-link');
+
+
         for (let index = 0; index < nav_link.length; index++) {
             const element = nav_link[index];
+            console.log('element: ', element);
             element.addEventListener('click', () => {
-                console.log('element: ', element);
                 if (!element.classList.contains('active')) {
+                    const active = document.querySelector('.active');
                     console.log('active: ', active);
-
-                    if (active) {
-                        active.classList.remove('active');
-                    }
-
                     element.classList.add('active');
-                    console.log('element: ', element);
+                    active.classList.remove('active');
                 } else {
-                    console.log('T\'as deja la classe \'active\' gros');
+                    console.log('T\'es deja clické bro');
                 }
+
             });
         }
+
 
         // ONE CHOOSE BETWEEN CREATE OR GET EXISTENCE CONTACT
         const existant_radio = document.getElementById('contact_existant');
@@ -133,7 +133,7 @@
         }
 
 
-        // TABS FUNCTIONNALITY
+            // TABS FUNCTIONNALITY
 
     </script>
 </body>

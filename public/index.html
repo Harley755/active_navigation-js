@@ -87,54 +87,55 @@
             <div id="content1"></div>
         </section>
     </main>
-</body>
 
 
-<script>
-    // NAVIGATION LINK
-    const nav_link = document.getElementsByClassName('nav-link');
-    for (let index = 0; index < nav_link.length; index++) {
-        const element = nav_link[index];
-        element.addEventListener('click', () => {
-            console.log('element: ', element);
-            if (!element.classList.contains('active')) {
-                console.log('active: ', active);
 
-                if (active) {
-                    active.classList.remove('active');
-                }
-
-                element.classList.add('active');
+    <script>
+        // NAVIGATION LINK
+        const nav_link = document.getElementsByClassName('nav-link');
+        for (let index = 0; index < nav_link.length; index++) {
+            const element = nav_link[index];
+            element.addEventListener('click', () => {
                 console.log('element: ', element);
-            } else {
-                console.log('T\'as deja la classe \'active\' gros');
-            }
-        });
-    }
+                if (!element.classList.contains('active')) {
+                    console.log('active: ', active);
 
-    // ONE CHOOSE BETWEEN CREATE OR GET EXISTENCE CONTACT
-    const existant_radio = document.getElementById('contact_existant');
-    const cree_contact_radio = document.getElementById('cree_contact');
+                    if (active) {
+                        active.classList.remove('active');
+                    }
 
-    const contact_existant_div = document.getElementById('contact_existant_div');
-    const cree_contact_div = document.getElementById('cree_contact_div');
-
-    console.log('existant_radio: ', existant_radio.checked);
-
-    document.addEventListener('DOMContentLoaded', changeOption);
-    function changeOption() {
-        if (existant_radio.checked) {
-            contact_existant_div.style.display = 'block';
-            cree_contact_div.style.display = 'none';
-        } else {
-            contact_existant_div.style.display = 'none';
-            cree_contact_div.style.display = 'block';
+                    element.classList.add('active');
+                    console.log('element: ', element);
+                } else {
+                    console.log('T\'as deja la classe \'active\' gros');
+                }
+            });
         }
-    }
+
+        // ONE CHOOSE BETWEEN CREATE OR GET EXISTENCE CONTACT
+        const existant_radio = document.getElementById('contact_existant');
+        const cree_contact_radio = document.getElementById('cree_contact');
+
+        const contact_existant_div = document.getElementById('contact_existant_div');
+        const cree_contact_div = document.getElementById('cree_contact_div');
+
+        console.log('existant_radio: ', existant_radio.checked);
+
+        document.addEventListener('DOMContentLoaded', changeOption);
+        function changeOption() {
+            if (existant_radio.checked) {
+                contact_existant_div.style.display = 'block';
+                cree_contact_div.style.display = 'none';
+            } else {
+                contact_existant_div.style.display = 'none';
+                cree_contact_div.style.display = 'block';
+            }
+        }
 
 
-    // TABS FUNCTIONNALITY
+        // TABS FUNCTIONNALITY
 
-</script>
+    </script>
+</body>
 
 </html>

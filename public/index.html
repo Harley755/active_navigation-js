@@ -56,13 +56,43 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+        <form action="">
+            <div class="form-input">
+                <input onchange="changeOption()" type="radio" name="contact" id="contact_existant" checked>
+                <label for="contact_existant">Contact Existant</label>
+            </div>
+            <div id="contact_existant_div">
+                <input type="text" name="contact_existant" id="">
+            </div>
+            <div class="form-input">
+                <input onchange="changeOption()" type="radio" name="contact" id="cree_contact">
+                <label for="cree_contact">Créer un Contact</label>
+            </div>
+            <div id="cree_contact_div">
+                <input type="text" name="cree_contact" id="">
+            </div>
+        </form>
+
+
+        <section>
+            <ul>
+                <li><a href="#">tab 1</a></li>
+                <li><a href="#">tab 2</a></li>
+                <li><a href="#">tab 3</a></li>
+                <li><a href="#">tab 4</a></li>
+            </ul>
+
+            <div id="content1"></div>
+        </section>
+    </main>
 </body>
 
 
 <script>
+    // NAVIGATION LINK
     const nav_link = document.getElementsByClassName('nav-link');
-
-
     for (let index = 0; index < nav_link.length; index++) {
         const element = nav_link[index];
         element.addEventListener('click', () => {
@@ -81,6 +111,30 @@
             }
         });
     }
+
+    // ONE CHOOSE BETWEEN CREATE OR GET EXISTENCE CONTACT
+    const existant_radio = document.getElementById('contact_existant');
+    const cree_contact_radio = document.getElementById('cree_contact');
+
+    const contact_existant_div = document.getElementById('contact_existant_div');
+    const cree_contact_div = document.getElementById('cree_contact_div');
+
+    console.log('existant_radio: ', existant_radio.checked);
+
+    document.addEventListener('DOMContentLoaded', changeOption);
+    function changeOption() {
+        if (existant_radio.checked) {
+            contact_existant_div.style.display = 'block';
+            cree_contact_div.style.display = 'none';
+        } else {
+            contact_existant_div.style.display = 'none';
+            cree_contact_div.style.display = 'block';
+        }
+    }
+
+
+    // TABS FUNCTIONNALITY
+
 </script>
 
 </html>

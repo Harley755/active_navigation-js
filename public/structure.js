@@ -22,8 +22,64 @@ delete user.name
 
 let schedule = {};
 
-alert( isEmpty(schedule) ); // true
+function isEmpty(schedule) {
+    for (const key in schedule) {
+        return false;
+    }
+    return true;
+}
 
-schedule["8:30"] = "get up";
+console.log('My function : ' + isEmpty(schedule));
 
-alert( isEmpty(schedule) ); // false
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+let sum = 0;
+
+function calculateSalaries(salaries) {
+    for (const key in salaries) {
+        if (salaries.hasOwnProperty.call(salaries, key)) {
+            const element = salaries[key];
+            console.log(key, element);
+            sum += element;
+        }
+    } 
+    return sum;
+}
+
+console.log(calculateSalaries(salaries));
+
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] == 'number') {
+      obj[key] *= 2;
+    }
+  }
+}
+
+const panier = {
+  name: 'CartName',
+  pUnitaire: 28.00,
+};
+
+const panierClone = {};
+
+for (let key in panier) {
+  panierClone[key] = panier[key];
+}
+
+console.log('Panier clone ', panierClone.pUnitaire);
+
+console.log(multiplyNumeric(menu));
